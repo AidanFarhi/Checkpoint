@@ -39,8 +39,9 @@ pushTrue([1,2,3]) ===> [1, 2, 3, 'last element']
 */
 
 function pushString(arr) {
-  console.log('test')
-  console.log(arr);
+  
+  arr[arr.length] = 'last element'
+  return arr
 }
 
 /*
