@@ -28,7 +28,9 @@ CREATE A FUNCTION THAT ACCEPTS ONE ARGUMENT, THE NUMBER OF TIMES IT WILL CONSOLE
 */
 
 function dynamicHelloWorld(num) {
-  // CODE HERE
+  for (let i = 0; i < num; i++) {
+    console.log('hello world')
+  }
 }
 
 /*
@@ -39,7 +41,9 @@ CREATE A FUNCTION THAT ACCEPTS A STRING AND WILL LOG TO THE CONSOLE EACH CHARACT
 */
 
 function logEachChar(str) {
-  // CODE HERE
+  for (let char of str) {
+    console.log(char)
+  }
 }
 
 /*
@@ -54,13 +58,19 @@ e.g. checkIfCharExists('hello', 'l') ===> true
 */
 
 function checkIfCharExists(str, char) {
-  // CODE HERE
+  for (let ch of str) {
+    if (ch === char) {
+      return true
+    }
+  }
+  return false
 }
 
 /*
 QUESTION 4
 
-CREATE A FUNCTION THAT TAKES TWO ARGUMENTS, A WORD AND A CHARACTER, IT THEN RETURNS THE INDEX OF THE FIRST INSTANCE OF THAT CHARACTER'S LOCATION. IF IT DOES NOT EXIST IN THE WORD RETURN -1
+CREATE A FUNCTION THAT TAKES TWO ARGUMENTS, A WORD AND A CHARACTER, IT THEN RETURNS THE INDEX OF THE FIRST INSTANCE OF THAT CHARACTER'S LOCATION. 
+IF IT DOES NOT EXIST IN THE WORD RETURN -1
 
 
 e.g. indexOf('hello', 'l') ===> 2
@@ -68,13 +78,21 @@ e.g. indexOf('hello', 'l') ===> 2
 */
 
 function indexOf(str, char) {
-  // CODE HERE
+  for (let i = 0; i < str.length; i++) {
+    let ch = str[i]
+    if (ch === char) {
+      return i
+    }
+  }
+  return -1
 }
 
 /*
 QUESTION 5
 
-CREATE A FUNCTION THAT TAKES ONE ARGUMENTS, A NUMBER,  AND CONSOLE.LOGS THE NUMBERS 1 to ARGUMENT. BUT FOR MULTIPLES OF THREE CONSOLE.LOG "Fizz" INSTEAD OF THE NUMBER AND FOR THE MULTIPLES OF FIVE CONSOLE.LOG "Buzz". FOR NUMBERS WHICH ARE MULTIPLES OF BOTH THREE AND FIVE PRINT "FizzBuzz".
+CREATE A FUNCTION THAT TAKES ONE ARGUMENTS, A NUMBER,  AND CONSOLE.LOGS THE NUMBERS 1 to ARGUMENT. 
+BUT FOR MULTIPLES OF THREE CONSOLE.LOG "Fizz" INSTEAD OF THE NUMBER AND FOR THE MULTIPLES OF FIVE CONSOLE.LOG "Buzz". 
+FOR NUMBERS WHICH ARE MULTIPLES OF BOTH THREE AND FIVE PRINT "FizzBuzz".
 
 
 e.g. indexOf(15)
@@ -100,7 +118,17 @@ FizzBuzz
 */
 
 function fizzBuzz(num) {
-  // CODE HERE
+  for (let i = 1; i < num; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log('FizzBuzz')
+    } else if (i % 5 === 0) {
+      console.log('Buzz')
+    } else if (i % 3 === 0) {
+      console.log('Fizz')
+    } else {
+      console.log(i)
+    }
+  }
 }
 
 /*
@@ -114,7 +142,13 @@ THE FIBONACCI SEQUENCE STARTS WITH 1 AND 1 AND THEN THE NEXT NUMBER IS THE ADDIT
 */
 
 function fibonacci(n) {
-  // CODE HERE
+  if (n === 0) {
+    return 0
+  } else if (n === 1) {
+    return 1
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2)
+  }
 }
 
 console.log(fibonacci(5));
